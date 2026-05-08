@@ -1,3 +1,3 @@
-FROM almalinux
-RUN dnf install nginx -y
-CMD ["nginx", "-g", "daemon off;"]
+FROM mongo:7.0
+COPY *.js /docker-entrypoint-initdb.d
+
