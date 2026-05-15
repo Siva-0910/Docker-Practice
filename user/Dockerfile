@@ -1,11 +1,22 @@
-From node:20
+# From node:20
+# WORKDIR /opt/server
+# ENV REDIS_URL="redis" \
+#     MONGO_URL="mongodb" \
+#     MONGO="true"
+# COPY *.json .
+# COPY *.js .
+# RUN npm install
+# CMD ["node","server.js"]
+
+FROM node:20
 WORKDIR /opt/server
-ENV REDIS_URL="redis" \
-    MONGO_URL="mongodb" \
-    MONGO="true"
-COPY *.json .
+ENV MONGO="true"
+ENV REDIS_URL="redis://redis:6379"
+ENV MONGO_URL="mongodb://mongodb:27017/users"
+COPY package.json .
 COPY *.js .
 RUN npm install
+RUN apt-get update -y \
+    && apt-get install net-tools git -y \
+    && apt-get clean
 CMD ["node","server.js"]
-
- 
