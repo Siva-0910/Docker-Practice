@@ -5,9 +5,8 @@ ENV CART_HOST="cart" \
     USER_HOST="user" \
     USER_PORT="8080" \
     AMQP_HOST="rabbitmq"
-
-COPY *.py
-COPY *.ini
-COPY *.txt
+COPY *.py .
+COPY *.ini .
+COPY *.txt .
 RUN pip3 install -r requirements.txt
 CMD ["uwsgi", "--ini", "payment.ini"]
