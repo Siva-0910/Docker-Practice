@@ -6,6 +6,6 @@ ENV REDIS_URL="redis" \
 COPY *.json .
 COPY *.js .
 RUN npm install
-CMD ["node", "server.js"]
+CMD ["node","server.js"]
 
  
