@@ -1,4 +1,4 @@
-FROM python:3.10.20-alphine
+FROM python:3.10.20-alpine
 WORKDIR /opt/server
 ENV CART_HOST="cart" \
     CART_PORT="8080" \
