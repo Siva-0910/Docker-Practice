@@ -8,5 +8,6 @@ ENV CART_HOST="cart" \
 COPY *.py .
 COPY *.ini .
 COPY *.txt .
-RUN pip3 install -r requirements.txt
+RUN pip3 install --no-cache-dir --prefix=/install -r requirements.txt
+#RUN pip3 install -r requirements.txt
 CMD ["uwsgi", "--ini", "payment.ini"]
