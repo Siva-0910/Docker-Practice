@@ -1,4 +1,4 @@
-FROM maven
+FROM eclipse-temurin:17-jre-alpine
 WORKDIR /opt/server
 COPY src /opt/server/src
 COPY pom.xml .
