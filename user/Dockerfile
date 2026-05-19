@@ -8,7 +8,7 @@
 # RUN npm install
 # CMD ["node","server.js"]
 
-FROM node:20
+FROM node:20-alpine3.21
 WORKDIR /opt/server
 ENV MONGO="true"
 ENV REDIS_URL="redis://redis:6379"
